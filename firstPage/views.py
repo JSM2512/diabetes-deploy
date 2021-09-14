@@ -9,10 +9,19 @@ reloadModel=joblib.load('./models/ModelforDiabetes.pkl')
 import pymongo
 from pymongo import MongoClient
 
-client = pymongo.MongoClient("mongodb://jaiwant:<jaiwant@113406>@cluster0-shard-00-00.vtex2.mongodb.net:27017,cluster0-shard-00-01.vtex2.mongodb.net:27017,cluster0-shard-00-02.vtex2.mongodb.net:27017/diabetesDB?ssl=true&replicaSet=atlas-k3jdce-shard-0&authSource=admin&retryWrites=true&w=majority")
-db = client.test
+# client = pymongo.MongoClient("mongodb://jaiwant:<jaiwant@113406>@cluster0-shard-00-00.vtex2.mongodb.net:27017,cluster0-shard-00-01.vtex2.mongodb.net:27017,cluster0-shard-00-02.vtex2.mongodb.net:27017/diabetesDB?ssl=true&replicaSet=atlas-k3jdce-shard-0&authSource=admin&retryWrites=true&w=majority")
+# db = client.test
 
-collectionD=db['diabetesTable']
+# collectionD=db['diabetesTable']
+
+from django.conf import settings
+my_client = pymongo.MongoClient(settings.DB_NAME)
+
+# First define the database name
+dbname = my_client['diabetesDB']
+
+# Now get/create collection name (remember that you will see the database in your mongodb cluster only after you create a collection)
+collection_name = dbname["diabetesTable"]
 
 # import pymongo 
 # import urllib 
