@@ -83,7 +83,7 @@ DATABASES = {
     }
 }
 
-
+DB_NAME = 'mongodb+srv://<jaiwant>:<jaiwant@113406>@<cluster0>.mongodb.net/diabetesDB'
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
 
