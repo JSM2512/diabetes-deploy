@@ -8,8 +8,9 @@ reloadModel=joblib.load('./models/ModelforDiabetes.pkl')
 # ------------- DATABASE CONNECTION-------------
 import pymongo
 from pymongo import MongoClient
-
-client = pymongo.MongoClient("mongodb://jaiwant:jaiwant@113406@cluster0-shard-00-00.vtex2.mongodb.net:27017,cluster0-shard-00-01.vtex2.mongodb.net:27017,cluster0-shard-00-02.vtex2.mongodb.net:27017/diabetesDB?ssl=true&replicaSet=atlas-k3jdce-shard-0&authSource=admin&retryWrites=true&w=majority")
+import urllib
+mongo_uri = "mongodb://jaiwant:" + urllib.quote("jaiwant@113406") + "@cluster0-shard-00-00.vtex2.mongodb.net:27017,cluster0-shard-00-01.vtex2.mongodb.net:27017,cluster0-shard-00-02.vtex2.mongodb.net:27017/diabetesDB?ssl=true&replicaSet=atlas-k3jdce-shard-0&authSource=admin&retryWrites=true&w=majority"
+client = pymongo.MongoClient(mongo_uri)
 db = client.test
 
 collectionD=dbname["diabetesTable"]
