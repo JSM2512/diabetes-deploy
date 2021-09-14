@@ -14,6 +14,11 @@ db = client.test
 
 collectionD=db['diabetesTable']
 
+# import pymongo 
+# import urllib 
+
+# mongo_uri = "mongodb://jaiwant:" + urllib.quote("jaiwant@113406") + "@0.0.0.0:27001/"
+# client = pymongo.MongoClient(mongo_uri)
 # ----------------------------------------------
 
 def index(request):
