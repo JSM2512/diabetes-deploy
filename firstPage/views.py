@@ -14,7 +14,7 @@ mongo_uri = "mongodb://jaiwant:" + quote("jaiwant@113406") + "@cluster0-shard-00
 client = pymongo.MongoClient(mongo_uri)
 db = client.test
 
-collectionD=dbname["diabetesTable"]
+collectionD=db["diabetesTable"]
 
 # from django.conf import settings
 # my_client = pymongo.MongoClient(settings.DB_NAME)
