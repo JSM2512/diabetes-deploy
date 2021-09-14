@@ -1,0 +1,41 @@
+{% extends 'headerPage.html' %}
+
+{% block content%}
+
+    <h2>Check If you have Diabetes or not!!</h2>
+
+    <h3>Please enter details:</h3>
+    <br>
+    {%  if scoreval  %}
+    <form method="post" enctype="multipart/form-data" action="updateDataBase">
+    {% else %}
+    <form method="post" enctype="multipart/form-data" action="predictDia">
+    {% endif%}
+ {% csrf_token %}
+ <div class="col-md-4 col-sm-4"><label for="fname">Pregnancies:</label> </div> <input name="pregVal" type="text" value={{temp.Pregnancies}}><br><br>
+ <div class="col-md-4 col-sm-4"><label for="lname">Glucose:</label> </div> <input type="text" id="lname" name="gluVal" value={{temp.Glucose}}><br><br>
+ <div class="col-md-4 col-sm-4"><label for="fname">BloodPressure:</label> </div> <input type="text" id="fname" name="bpVal" value={{temp.BloodPressure}}><br><br>
+ <div class="col-md-4 col-sm-4"><label for="lname">SkinThickness:</label> </div> <input type="text" id="lname" name="stVal" value={{temp.SkinThickness}}><br><br>
+ <div class="col-md-4 col-sm-4"><label for="fname">Insulin:</label></div>  <input type="text" id="fname" name="insVal" value={{temp.Insulin}}><br><br>
+ <div class="col-md-4 col-sm-4"><label for="lname">BMI year:</label> </div> <input type="text" id="lname" name="bmiVal" value={{temp.BMI_year}}><br><br>
+ <div class="col-md-4 col-sm-4"><label for="lname">DiabetesPedigreeFunction:</label> </div> <input type="text" id="lname" name="predfunVal" value={{temp.DiabetesPedigreeFunction}}><br><br>
+ <div class="col-md-4 col-sm-4"><label for="fname">Age:</label> </div> <input name="ageVal" type="text" value={{temp.Age}}><br><br>
+ <br>
+
+ {%  if scoreval  %}
+ <h1>Your Diabetes score is {{scoreval}}</h1>
+        <h3>If score is 1 - You have Diabetes  PS: Consult a Doctor</h3>
+        <h3>If score is 0 - You do not have Diabetes   PS: You are fine but keep control over your diet</h3>
+ <h3>If the response is good. Do you weant to save it in DB?
+ </h3>
+ <input type="hidden" id="lname" name="diaVal" value={{scoreval}}>
+ <input type="submit" value="Submit" ></div>
+ {% else%}
+ <input type="submit" value="Submit" ></div>
+ {% endif %}
+
+</form>
+<br>
+
+
+{% endblock %}
