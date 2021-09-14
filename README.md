@@ -1,6 +1,6 @@
 # Diabetes Prediction Website
-### tech stack : HTML , CSS , Django , MongoDB
-### dataset : Pima Indian Diabetes Dataset (Link - https://www.kaggle.com/uciml/pima-indians-diabetes-database)
+### Tech stack : HTML , CSS , Django , MongoDB
+### Dataset : Pima Indian Diabetes Dataset (Link - https://www.kaggle.com/uciml/pima-indians-diabetes-database)
 ### Live Link : https://diabetes-jaiwant-prediction.herokuapp.com/
 ### Methodology Chart
 ![Screenshot (420)](https://user-images.githubusercontent.com/49087609/133254918-0c71509c-e36d-40e2-994a-076edc6ba769.png)
